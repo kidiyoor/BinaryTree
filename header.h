@@ -30,6 +30,7 @@ class Tree
 		~Tree();
 		void insert(int a[],int b);
 		NodeT& remove(); //doubt
+		void display();
 
 };
 
@@ -57,6 +58,7 @@ class SList
 		~SList();
 		void insert(int a[],int b);
 		NodeL& remove(); 
+		void display();
 
 };
 

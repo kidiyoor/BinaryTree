@@ -31,7 +31,7 @@ main()
 		}
 		else if(ch==3)
 		{
-
+			SL.display();
 		}
 		else if(ch=-1)
 			break;
