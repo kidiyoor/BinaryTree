@@ -14,7 +14,7 @@ SList::~SList()
 }
 
 
-void SList::insert(int a[],int b)
+void SList::insert(const int a[],int b)
 {
 	NodeL *n=new NodeL(a,b);
 	if(head==NULL)	
@@ -34,13 +34,14 @@ void SList::insert(int a[],int b)
 	}
 }
 
-void SList::display()
+void SList::display() const
 {
 	cout<<"#### DISPLAYING SINGLY LIST CONTENT ####";
 	NodeL *temp=head;
 	while(temp!=NULL)
 	{
 		cout<<endl<<"SIZE : "<<temp->size<<endl;
+		cout	<<"SUM : "<<temp->sum<<endl;
 		for(int i=0;i<temp->size;i++)
 		{
 			cout<<temp->array[i]<<" ";

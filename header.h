@@ -1,10 +1,26 @@
 using namespace std;
 
+class NodeL
+{
+	private:
+		NodeL(const int a[],int b);
+	public:
+		int *array;
+		int size;
+		int sum;
+		NodeL *next;
+
+		int getSum();
+		~NodeL();
+
+		friend class SList;
+
+};
+
 class NodeT
 {
 	private:
-		NodeT(int a[],int b);
-		static int StoreSum(int arr[],int size);	
+		explicit NodeT(const NodeL& a); //explicit required ? tree.cpp line 20
 		
 	public:
 		int *array;
@@ -12,8 +28,6 @@ class NodeT
 		int sum;
 		NodeT *left; //reference or pointer ?
 		NodeT *right;
-
-		int getSum();
 
 		~NodeT();
 
@@ -28,26 +42,12 @@ class Tree
 		NodeT *root;
 		Tree();
 		~Tree();
-		void insert(int a[],int b);
-		NodeT& remove(); //doubt
-		void display();
+		void insert(const NodeL &a);
+		NodeT& remove(); //doubt return reference ?
+		void display() const;
 
 };
 
-class NodeL
-{
-	private:
-		NodeL(int a[],int b);
-	public:
-		int *array;
-		int size;
-		NodeL *next;
-
-		~NodeL();
-
-		friend class SList;
-
-};
 
 class SList
 {
@@ -56,9 +56,12 @@ class SList
 
 		SList();
 		~SList();
-		void insert(int a[],int b);
+		void insert(const int a[],int b);
 		NodeL& remove(); 
-		void display();
+		void display() const; 
+
+		//TODO
+		//Iterator class
 
 };
 

@@ -2,17 +2,17 @@
 using namespace std;
 #include<iostream>
 
-NodeT::NodeT(int *a,int b):
-size(b)
+NodeT::NodeT(const NodeL& a):
+size(a.size),sum(a.sum)
 {
-	array=new int[b];
-	for(int i=0;i<b;i++)
+	array=new int[a.size];
+	for(int i=0;i<a.size;i++)
 	{
-		array[i]=a[i];
+		array[i]=a.array[i];
 	}
 	//TODO
-	//copy array
-	sum=StoreSum(a,b);
+	
+	//sum=
 }
 
 
@@ -21,23 +21,3 @@ NodeT::~NodeT()
 	delete [] array;
 }
 
-int NodeT::getSum()
-{
-	int sum=0;
-	for(int i=0;i<size;i++)
-	{
-		sum=sum+array[i];
-	}
-	return sum;
-}
-
-int NodeT::StoreSum(int arr[],int size)
-{
-	int sum=0;
-	for(int i=0;i<size;i++)
-	{
-		sum=sum+arr[i];
-	}
-	cout<<"sum calculated"<<endl;
-	return sum;
-}

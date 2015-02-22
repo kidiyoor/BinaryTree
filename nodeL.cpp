@@ -2,7 +2,7 @@
 using namespace std;
 #include<iostream>
 
-NodeL::NodeL(int *a,int b):
+NodeL::NodeL(const int *a,int b):
 size(b)
 {
 	array=new int[b];
@@ -10,9 +10,19 @@ size(b)
 	{
 		array[i]=a[i];
 	}
-
+	sum=getSum();
 }
 
+
+int NodeL::getSum()
+{
+	int sum=0;
+	for(int i=0;i<size;i++)
+	{
+		sum=sum+array[i];
+	}
+	return sum;
+}
 
 NodeL::~NodeL()
 {

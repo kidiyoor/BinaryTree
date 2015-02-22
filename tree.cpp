@@ -14,20 +14,21 @@ Tree::~Tree()
 }
 
 
-void Tree::insert(int a[],int b)
+void Tree::insert(const NodeL &a)
 {
-	NodeT *n=new NodeT(a,b);
+	
+	NodeT *n=new NodeT(a);
 	if(root==NULL)	
 	{
 		root=n;
 		root->left=NULL;
 		root->right=NULL;
-		cout << "SUM : "<<root->sum << endl;
 	}
 	else 
 	{
 		
 	}
+	
 }
 
 NodeT& Tree::remove()
