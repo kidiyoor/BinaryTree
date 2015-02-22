@@ -16,7 +16,7 @@ Tree::~Tree()
 
 void Tree::insert(int a[],int b)
 {
-	Node *n=new Node(a,b);
+	NodeT *n=new NodeT(a,b);
 	if(root==NULL)	
 	{
 		root=n;
@@ -30,7 +30,7 @@ void Tree::insert(int a[],int b)
 	}
 }
 
-Node& remove()
+NodeT& Tree::remove()
 {
 	
 }
