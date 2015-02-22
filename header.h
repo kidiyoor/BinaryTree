@@ -1,23 +1,21 @@
 using namespace std;
 
-class Node
+class NodeT
 {
 	private:
-		Node(int a[],int b);
+		NodeT(int a[],int b);
 		static int StoreSum(int arr[],int size);	
 		
 	public:
 		int *array;
 		int size;
 		int sum;
-		Node *left; //reference or pointer ?
-		Node *right;
+		NodeT *left; //reference or pointer ?
+		NodeT *right;
 
 		int getSum();
-			
 
-		Node();
-		~Node();
+		~NodeT();
 
 	friend class Tree;
 };
@@ -27,10 +25,38 @@ class Tree
 	private:
 		
 	public:
-		Node *root;
+		NodeT *root;
 		Tree();
 		~Tree();
 		void insert(int a[],int b);
-		Node& remove(); //doubt
+		NodeT& remove(); //doubt
 
-};;
+};
+
+class NodeL
+{
+	private:
+		NodeL(int a[],int b);
+	public:
+		int *array;
+		int size;
+		NodeL *next;
+
+		~NodeL();
+
+		friend class SList;
+
+};
+
+class SList
+{
+	public:
+		NodeL *head;
+
+		SList();
+		~SList();
+		void insert(int a[],int b);
+		NodeL& remove(); 
+
+};
+

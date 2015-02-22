@@ -5,13 +5,13 @@ using namespace std;
 
 main()
 {
-	Tree t;
+	SList SL;
 	int ch;
 	int *arr;
 	int size;
 	while(true)
 	{
-		cout << "1 insert 2. delete 3. display -1. exit"<<endl;
+		cout << "1 insert\n 2. delete\n 3. display\n 4.make a binary tree\n -1. exit"<<endl;
 		cin >> ch;
 		if(ch==1)
 		{
@@ -23,7 +23,7 @@ main()
 				cout << "Enter element"<<endl;
 				cin >> arr[i];
 			}
-			t.insert(arr,size);
+			SL.insert(arr,size);
 		}
 		else if (ch==2)
 		{
@@ -36,7 +36,7 @@ main()
 		else if(ch=-1)
 			break;
 	}
-	cout << t.root->sum <<endl;
+	cout << "\nEND" <<endl;
 
 	//t.insert();
 }
